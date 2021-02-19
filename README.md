@@ -12,7 +12,7 @@ Nós na MOBRJ Software somos apaixonados por desafios de software. O nosso traba
 
 O seu objetivo será clonar este repositório, executar o máximo de desejos listados no único **Project** criado, estimar o tempo que levará para executar cada item e registrar o tempo decorrido para que você mesmo possa avaliar seu desempenho.
 
-A missão será de contruir com a mentalidade de **'MOBILE FIRST'**:
+A missão será de construir com a mentalidade de **'MOBILE FIRST'**:
 
 - Um website reactjs utilizando NextJS, TailwindCSS e Framer Motion
 
@@ -20,7 +20,7 @@ Segue o design contendo todos os artefatos de imagem e texto necessários: [Link
 
 > Dica de ouro
 >
-> Vídeo com exemplo de utilização duas das tecnologias requisitadas no desafio: [Link molezinha](https://www.youtube.com/watch?v=n_GU1yTImJg)
+> Vídeo com exemplo de utilização de duas das tecnologias requisitadas no desafio: [Link molezinha](https://www.youtube.com/watch?v=n_GU1yTImJg)
 
 # O que iremos avaliar?
 
@@ -28,7 +28,7 @@ O time de projeto Javascript irá analisar a sua entrega tentando rodar os códi
 
 # O prazo
 
-O tempo é você quem determina. Mas lembre-se que é melhor o feito do que o perfeito. Portanto, iremos começar a avaliar as entregas na segunda-feira dia 22 à partir das 14h.
+O tempo é você quem determina. Mas lembre-se que é melhor o feito do que o perfeito. Portanto, iremos começar a avaliar as entregas na **segunda-feira dia 22 à partir das 14h**.
 
 # A entrega
 
