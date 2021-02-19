@@ -10,7 +10,7 @@ Nós na MOBRJ Software somos apaixonados por desafios de software. O nosso traba
 
 # Sobre o desafio
 
-O seu objetivo será clonar este repositório, executar o máximo de desejos listados no único **Project** criado, estimar o tempo que levará para executar cada item e registrar o tempo decorrido para que você mesmo possa avaliar seu desempenho.
+O seu objetivo será abrir um fork este repositório, executar o máximo de desejos listados no único **Project** criado, estimar o tempo que levará para executar cada item e registrar o tempo decorrido para que você mesmo possa avaliar seu desempenho.
 
 A missão será de construir com a mentalidade de **'MOBILE FIRST'**:
 
