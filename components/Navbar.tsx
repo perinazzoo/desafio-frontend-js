@@ -1,4 +1,4 @@
-interface NavbarProps {
+type NavbarProps = {
   navLinks: NavLink[]
 }
 
@@ -14,13 +14,13 @@ export default function Navbar ({ navLinks }: NavbarProps) {
     <nav>
       {navLinks.map((navLink) => (
         <>
-          <a href={navLink.url}>
+          <a key={navLink.title} href={navLink.url}>
             <navLink.icon />
             <span>{navLink.title}</span>
           </a>
 
           {navLink.subLinks?.map((subLink) => (
-            <a href={subLink.url}>
+            <a key={subLink.title} href={subLink.url}>
               {subLink.title}
             </a>
           ))}
