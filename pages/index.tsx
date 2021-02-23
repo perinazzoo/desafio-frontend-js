@@ -9,7 +9,7 @@ export default function Home () {
       </Head>
 
       <main>
-
+        <h1>Abacaxi</h1>
       </main>
 
     </div>
