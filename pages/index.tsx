@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import Icon from '../components/Icon'
+
 export default function Home () {
   return (
     <div>
@@ -10,6 +12,7 @@ export default function Home () {
 
       <main>
         <h1>Abacaxi</h1>
+        <Icon name="bookmark"/>
       </main>
 
     </div>
