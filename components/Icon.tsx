@@ -21,7 +21,7 @@ export default function Icon ({ name, color = '#999999', size = 24 }: IconProps)
      fill="none"
      xmlns="http://www.w3.org/2000/svg">
       {icons[name].map((path) => (
-        <path d={path} fill={color} />
+        <path key={path} d={path} fill={color} />
       ))}
     </svg>
   )
