@@ -32,7 +32,7 @@ export default function Filter () {
         <div>
           <div>
             <Icon
-              name="articles"
+              name="artigos"
             />
           </div>
           <span>Artigos</span>

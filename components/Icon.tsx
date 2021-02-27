@@ -1,9 +1,9 @@
 import { icons } from '../utils/icons'
 
-type names = keyof typeof icons
+export type iconsNames = keyof typeof icons
 
 type IconProps = {
-  name: names
+  name: iconsNames
   color?: string
   size?: number | string
 }
@@ -21,7 +21,7 @@ export default function Icon ({ name, color = '#999999', size = 24 }: IconProps)
      fill="none"
      xmlns="http://www.w3.org/2000/svg">
       {icons[name].map((path) => (
-        <path key={path} d={path} fill={color} />
+        <path fillRule="evenodd" key={path} d={path} fill={color} />
       ))}
     </svg>
   )
