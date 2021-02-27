@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Carousel from '../components/Carousel'
 
 import Icon from '../components/Icon'
 
@@ -15,6 +16,16 @@ export default function Home () {
         <Icon name="bookmark"/>
       </main>
 
+        <Carousel
+          dots={{
+            position: 'bottom-middle',
+            show: true
+          }}
+        >
+          <div></div>
+          <div></div>
+          <div></div>
+        </Carousel>
     </div>
   )
 }
