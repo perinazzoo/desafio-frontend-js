@@ -2,41 +2,66 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      height: {
+        66: '267px'
+      }
+    },
+    minWidth: {
+      0: '0',
+      '1/4': '25%',
+      '1/2': '50%',
+      '3/4': '75%',
+      full: '100%',
+      55: '55px'
+    },
     colors: {
-      'color-action': {
+      transparent: 'transparent',
+      action: {
+        50: '#E8F2FB',
         500: '#1A8DE9',
         600: '#197ACF'
       },
-      'color-brand': {
+      brand: {
         500: '#003781'
       },
-      'color-grey': {
+      grey: {
         50: '#FAFAFA',
         300: '#D9D9D9',
         500: '#999999',
         800: '#414141'
       },
-      'color-vibrant': {
+      vibrant: {
+        50: '#FAFEFF',
+        100: '#EFFCFF',
         500: '#96DCFA'
       },
-      'color-success': {
+      success: {
         500: '#3DA556'
       },
-      'color-orange': {
+      orange: {
+        50: '#FFE8B0',
         500: '#F86200',
         700: '#CF5200'
       },
-      'color-purple': {
+      purple: {
         500: '#8A679C'
       },
-      'color-base': {
-        white: '#FFFFFF'
+      base: {
+        white: '#FFFFFF',
+        black: '#000000'
+      },
+      opaque: {
+        900: '#001A27'
       }
     },
     boxShadow: {
       sm: '0px 2px 11px -5px rgba(0, 0, 0, 0.25)',
       mobile: '0px 0px 10px rgba(14, 33, 61, 0.2)',
       menu: '0px -8px 22px rgba(0, 0, 0, 0.25)'
+    },
+    fontFamily: {
+      sans: ['Roboto', 'sans-serif']
     }
   },
   variants: {

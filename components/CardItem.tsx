@@ -1,13 +1,14 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import resolveConfig from 'tailwindcss/resolveConfig'
 
-// const colors = {
-//   interno: '',
-//   confidencial: ''
-// }
+import tailwindConfig from '../tailwind.config'
+
+import Icon from './Icon'
 
 type CardItemProps = {
   cardData: {
-    src: string
+    image: string
     tag: 'interno' | 'confidencial'
     icon: React.FC
     metric: string
@@ -18,35 +19,58 @@ type CardItemProps = {
   }
 }
 
+const fullConfig = resolveConfig(tailwindConfig)
+
 export default function CardItem ({ cardData }: CardItemProps) {
+  const tagClass = cardData.tag === 'confidencial' ? 'text-orange-500' : 'text-success-500'
+
   return (
-    <div>
-      <a href="/video">
-        <span>{cardData.tag}</span>
-        <Image
-          layout="fill"
-          src={cardData.src}
-        />
-        <div>
-          <cardData.icon />
-          <span>{cardData.metric}</span>
-        </div>
-        {cardData.percentage && (
-          <div>
-            <div>
-              <div style={{ width: `${cardData.percentage}%` }} />
-            </div>
+    <div className="mb-6">
+      <Link href="/post">
+        <a className="relative w-full h-full flex flex-col">
+          <span
+           className={'opacity-80 rounded-br rounded-tl absolute top-0 left-0 z-10 px-4 bg-base-white uppercase text-xs tracking-wider ' + tagClass}
+          >
+            {cardData.tag}
+          </span>
+          <Image
+            className="rounded"
+            layout="responsive"
+            src={cardData.image}
+            width="336"
+            height="195"
+          />
+          <div className="flex rounded-full bg-base-white opacity-80 absolute bottom-4 right-4 px-2 py-0.5 items-center">
+            <cardData.icon />
+            <div className="border-l border-action-600 mx-2 h-3"/>
+            <span
+              className="text-action-600 text-xs"
+            >
+              {cardData.metric}
+            </span>
           </div>
-        )}
-      </a>
-      <div>
-        <p>{cardData.title}</p>
-        <div>{cardData.category}</div>
-        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6.9985 2.05827C5.56383 2.05777 4.18444 2.61158 3.14844 3.60405L3.14872 2.40827C3.14829 2.28481 3.09894 2.16657 3.01149 2.07943C2.92404 1.99229 2.80562 1.94336 2.68217 1.94336C2.55872 1.94336 2.4403 1.99229 2.35285 2.07943C2.2654 2.16657 2.21605 2.28481 2.21562 2.40827L2.21503 4.7416C2.2151 4.86532 2.26427 4.98395 2.35176 5.07143C2.43924 5.15891 2.55787 5.20809 2.68159 5.20815H5.01492C5.07619 5.20815 5.13686 5.19608 5.19346 5.17263C5.25007 5.14919 5.3015 5.11482 5.34482 5.0715C5.38815 5.02818 5.42251 4.97674 5.44596 4.92014C5.46941 4.86354 5.48147 4.80287 5.48147 4.7416C5.48147 4.68033 5.46941 4.61966 5.44596 4.56306C5.42251 4.50645 5.38815 4.45502 5.34482 4.4117C5.3015 4.36837 5.25007 4.33401 5.19346 4.31056C5.13686 4.28712 5.07619 4.27505 5.01492 4.27505H3.80469C4.66421 3.45178 5.80831 2.99201 6.9985 2.9916C7.92147 2.9916 8.82372 3.26529 9.59114 3.77806C10.3586 4.29084 10.9567 5.01966 11.3099 5.87238C11.6631 6.72509 11.7556 7.66339 11.5755 8.56864C11.3955 9.47388 10.951 10.3054 10.2984 10.958C9.64575 11.6107 8.81424 12.0552 7.909 12.2352C7.00377 12.4153 6.06546 12.3229 5.21274 11.9697C4.36001 11.6166 3.63117 11.0184 3.11837 10.251C2.60558 9.48362 2.33186 8.58138 2.33183 7.65841V7.65827C2.33205 7.59685 2.32014 7.53599 2.29678 7.47919C2.27343 7.42239 2.23909 7.37075 2.19574 7.32725C2.15239 7.28374 2.10088 7.24922 2.04416 7.22567C1.98744 7.20211 1.92662 7.18999 1.86521 7.18999C1.80379 7.18999 1.74298 7.20211 1.68626 7.22567C1.62953 7.24922 1.57802 7.28374 1.53467 7.32725C1.49132 7.37075 1.45698 7.42239 1.43363 7.47919C1.41028 7.53599 1.39837 7.59685 1.39858 7.65827H1.39844C1.39843 8.76585 1.72685 9.84857 2.34219 10.7695C2.95752 11.6904 3.83213 12.4082 4.85541 12.8321C5.87868 13.2559 7.00467 13.3669 8.09098 13.1508C9.17729 12.9347 10.1751 12.4014 10.9583 11.6182C11.7415 10.835 12.2749 9.83717 12.4909 8.75086C12.707 7.66456 12.5961 6.53857 12.1723 5.51529C11.7484 4.49201 11.0307 3.61739 10.1097 3.00205C9.1888 2.3867 8.10609 2.05827 6.9985 2.05827Z" fill="#999999"/>
-          <path d="M6.77905 4.4668C6.65533 4.46686 6.5367 4.51604 6.44922 4.60352C6.36174 4.691 6.31256 4.80963 6.3125 4.93335V8.02889C6.3125 8.1246 6.34189 8.21799 6.39671 8.29644C6.45152 8.3749 6.52911 8.43462 6.61898 8.46753L8.61051 9.19442C8.66189 9.21278 8.71603 9.22222 8.77058 9.22233C8.88032 9.22241 8.98657 9.18381 9.07067 9.11332C9.15478 9.04284 9.21135 8.94497 9.23046 8.83691C9.24957 8.72885 9.22999 8.61752 9.17517 8.52246C9.12034 8.4274 9.03377 8.35471 8.93066 8.31714L7.24561 7.70248V4.93335C7.24554 4.80963 7.19637 4.691 7.10889 4.60352C7.0214 4.51603 6.90277 4.46686 6.77905 4.4668Z" fill="#999999"/>
-        </svg>
-        <span>+ {cardData.averageTime}</span>
+          {cardData.percentage && (
+            <div className="absolute bottom-0 left-0 w-full h-1">
+              <div className="bg-action-600 w-full h-full rounded-b">
+                <div
+                 className={'bg-vibrant-500 h-full ' + (cardData.percentage === 100 ? 'rounded-b' : 'rounded-bl') }
+                 style={{ width: `${cardData.percentage}%` }}
+                />
+              </div>
+            </div>
+          )}
+        </a>
+      </Link>
+      <p className="text-sm text-grey-800 mt-4 mb-1 truncate">{cardData.title}</p>
+      <div className="flex items-center text-grey-500 text-xs">
+        <span>{cardData.category}</span>
+        <div className="border-l border-grey-500 mx-2 h-4"/>
+        <Icon
+          size={14}
+          color={fullConfig.theme.colors.grey[500]}
+          name="clock"
+        />
+        <span className="ml-1">+ {cardData.averageTime} min</span>
       </div>
     </div>
   )
