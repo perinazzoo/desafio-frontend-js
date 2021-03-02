@@ -9,7 +9,7 @@ export default function Header ({ className }: { className: string }) {
       <Link href="/">
         <a className="flex lg:hidden">
           <Image
-            src="/images/nextlogo.png"
+            src="/image/nextlogo.png"
             layout="fixed"
             width="115"
             height="29"
@@ -47,7 +47,7 @@ export default function Header ({ className }: { className: string }) {
         >
           <Image
             className="rounded-full"
-            src="/images/profile-icon.png"
+            src="/image/profile-icon.png"
             layout="fill"
           />
         </button>

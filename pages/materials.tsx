@@ -10,7 +10,7 @@ export default function Materials () {
             <Link href="/">
               <a className="hidden lg:flex justify-center shadow-menu">
                 <Image
-                  src="/images/nextlogo.png"
+                  src="/image/nextlogo.png"
                   width="244"
                   height="62"
                   layout="fixed"
