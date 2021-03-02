@@ -2,6 +2,7 @@ import React from 'react'
 import { TOptions } from 'keen-slider'
 import { useKeenSlider } from 'keen-slider/react'
 import Icon from './Icon'
+import { GetStaticProps } from 'next'
 
 type ArrowsType = {
   show: boolean
@@ -18,6 +19,7 @@ type CarouselProps = {
   dots?: DotsType
   arrows?: ArrowsType
   options?: TOptions
+  slideHeightClass?: string
 }
 
 const defaultDots: DotsType = {
@@ -34,12 +36,17 @@ export default function Carousel ({
   children,
   dots = defaultDots,
   arrows = defaultArrows,
+  slideHeightClass = '',
   options
 }: CarouselProps
 ) {
   const { nextArrow: NextArrow, prevArrow: PrevArrow } = { ...defaultArrows, ...arrows }
   const [currentSlide, setCurrentSlide] = React.useState(0)
+  const [loaded, setLoaded] = React.useState(false)
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+    mounted (s) {
+      setLoaded(true)
+    },
     slideChanged (s) {
       if (dots.show || arrows.show) {
         setCurrentSlide(s.details().relativeSlide)
@@ -53,10 +60,14 @@ export default function Carousel ({
 
   return (
     <div className="relative w-full">
-      <div ref={sliderRef} className="keen-slider">
+      <div ref={sliderRef} className={'keen-slider ' + slideHeightClass}>
         {React.Children.map(children, (child, index) => (
-          <div key={index} className="keen-slider__slide">
-            {child}
+          <div
+            key={index}
+            className="keen-slider__slide"
+            style={{ width: `calc(100% / ${options.slidesPerView as number || 1} - ${options.spacing / 2})` }}
+          >
+            {loaded && child}
           </div>
         ))}
       </div>

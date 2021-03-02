@@ -119,6 +119,7 @@ export default function Home () {
           <div className="relative">
             <Header className="absolute z-10 px-5 sm:px-8 xl:px-16 items-center"/>
             <Carousel
+              slideHeightClass="h-74 lg:h-84"
               arrows={{
                 show: true
               }}
@@ -298,6 +299,7 @@ export default function Home () {
               <h2 className="text-grey-800 text-lg mb-6">Conteúdos especiais</h2>
 
               <Carousel
+                slideHeightClass="h-66"
                 options={{
                   spacing: 16,
                   slidesPerView: 1.6,
@@ -321,8 +323,8 @@ export default function Home () {
                   style={{ backgroundImage: 'url("./images/walking-guy.png")' }}
                 >
                   <div className="relative pb-5 px-5 pt-8 flex flex-col h-full z-10">
-                    <p className="text-2xl text-base-white">
-                      Dicas de<br/>
+                    <p className="text-2xl whitespace-pre-wrap text-base-white">
+                      Dicas de{'\n'}
                       <span className="text-orange-50">
                         carreira
                       </span>
@@ -350,8 +352,8 @@ export default function Home () {
                   style={{ backgroundImage: 'url("./images/woman-upstairs.png")' }}
                 >
                   <div className="relative pb-5 px-5 pt-8 flex flex-col h-full z-10">
-                    <p className="text-2xl text-base-white">
-                      Do mil ao<br/>
+                    <p className="text-2xl whitespace-pre-wrap text-base-white">
+                      Do mil ao{'\n'}
                       <span className="text-orange-50">
                         milhão
                       </span>
@@ -379,9 +381,9 @@ export default function Home () {
                   style={{ backgroundImage: 'url("./images/calculator.png")' }}
                 >
                   <div className="relative pb-5 px-5 pt-8 flex flex-col h-full z-10">
-                    <p className="text-2xl text-base-white">
-                      Dicas de<br/>
-                      organização<br/>
+                    <p className="text-2xl whitespace-pre-wrap text-base-white">
+                      Dicas de{'\n'}
+                      organização{'\n'}
                       dos{' '}
                       <span className="text-orange-50">
                         lucros
@@ -409,12 +411,12 @@ export default function Home () {
                   style={{ backgroundImage: 'url("./images/handshake.png")' }}
                 >
                   <div className="relative pb-5 px-5 pt-8 flex flex-col h-full z-10">
-                    <p className="text-2xl text-base-white">
+                    <p className="text-2xl whitespace-pre-wrap text-base-white">
                       Aprenda a{' '}
                       <span className="text-orange-50">
-                        vender<br/>melhor{' '}
+                        vender{'\n'}melhor{' '}
                       </span>
-                      com um<br/>especialista
+                      com um{'\n'}especialista
                     </p>
 
                     <div className="flex flex-col sm:flex-row text-sm text-base-white mt-auto">
