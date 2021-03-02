@@ -299,7 +299,7 @@ export default function Home () {
                 slideHeightClass="h-66"
                 options={{
                   spacing: 16,
-                  slidesPerView: 1.6,
+                  slidesPerView: 1.4,
                   loop: false,
                   rubberband: false,
                   breakpoints: {
