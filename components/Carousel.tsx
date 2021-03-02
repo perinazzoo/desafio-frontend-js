@@ -2,7 +2,6 @@ import React from 'react'
 import { TOptions } from 'keen-slider'
 import { useKeenSlider } from 'keen-slider/react'
 import Icon from './Icon'
-import { GetStaticProps } from 'next'
 
 type ArrowsType = {
   show: boolean
