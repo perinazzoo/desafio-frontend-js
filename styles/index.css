@@ -5,3 +5,23 @@
 html, body {
   min-height: 100vh;
 }
+
+.dots {
+  bottom: 52px;
+  left: 20px;
+  transform: translate(0, 50%);
+}
+
+@media (min-width: 640px) {
+  .dots {
+    left: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .dots {
+    left: 50%;
+    bottom: 70px;
+    transform: translate(-50%, 50%);
+  }
+}

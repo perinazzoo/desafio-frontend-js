@@ -1,63 +1,58 @@
 import React from 'react'
+import { TOptions } from 'keen-slider'
 import { useKeenSlider } from 'keen-slider/react'
-
-type CarouselProps = {
-  children: React.ReactNode
-  count?: number
-  rubberband?: boolean
-  dots?: DotsType
-  arrows?: ArrowsType
-}
+import Icon from './Icon'
 
 type ArrowsType = {
   show: boolean
-  nextArrow: React.FC | string
-  prevArrow: React.FC | string
+  nextArrow?: React.FC
+  prevArrow?: React.FC
 }
 
 type DotsType = {
   show: boolean
-  position: keyof typeof dotsPositionsClass
+}
+
+type CarouselProps = {
+  children: React.ReactNode
+  dots?: DotsType
+  arrows?: ArrowsType
+  options?: TOptions
 }
 
 const defaultDots: DotsType = {
-  show: false,
-  position: 'bottom-middle'
+  show: false
 }
 
 const defaultArrows: ArrowsType = {
   show: false,
-  nextArrow: '>',
-  prevArrow: '<'
-}
-
-const dotsPositionsClass = {
-  'bottom-middle': 'bm',
-  'bottom-left': 'bl'
+  nextArrow: () => <Icon name="arrow-right-slim" />,
+  prevArrow: () => <Icon name="arrow-left-slim" />
 }
 
 export default function Carousel ({
   children,
-  count = 1,
-  rubberband = true,
   dots = defaultDots,
-  arrows = defaultArrows
+  arrows = defaultArrows,
+  options
 }: CarouselProps
 ) {
+  const { nextArrow: NextArrow, prevArrow: PrevArrow } = { ...defaultArrows, ...arrows }
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
-    slidesPerView: count,
-    rubberband,
     slideChanged (s) {
       if (dots.show || arrows.show) {
         setCurrentSlide(s.details().relativeSlide)
       }
-    }
+    },
+    ...options
   })
 
+  const childrenLength = React.Children.toArray(children).length
+  const slideLenght = currentSlide + 1
+
   return (
-    <div className="navigation-wrap">
+    <div className="relative w-full">
       <div ref={sliderRef} className="keen-slider">
         {React.Children.map(children, (child, index) => (
           <div key={index} className="keen-slider__slide">
@@ -66,28 +61,34 @@ export default function Carousel ({
         ))}
       </div>
 
-      {slider && (
+      {slider && arrows.show && (
         <>
-          <button
-            onClick={() => slider.prev()}
+          {currentSlide > 0 && (
+            <button
+              className="hidden lg:block absolute top-2/4 xl:transform xl:-translate-y-2/4 left-5 p-1 focus:outline-none"
+              onClick={() => slider.prev()}
             >
-            {() => arrows.prevArrow}
-          </button>
-          <button
-            onClick={() => slider.next()}
-          >
-            {() => arrows.nextArrow}
-          </button>
+              <PrevArrow />
+            </button>
+          )}
+          {slideLenght < childrenLength && (
+            <button
+              className="hidden lg:block absolute top-2/4 xl:transform xl:-translate-y-2/4 right-5 p-1 focus:outline-none"
+              onClick={() => slider.next()}
+            >
+              <NextArrow />
+            </button>
+          )}
         </>
       )}
 
       {slider && dots.show && (
-        <div className={'dots' + `--${dotsPositionsClass[dots.position]}`}>
+        <div className="flex absolute space-x-4 dots">
           {Array.from(Array(slider?.details().size).keys()).map(i => (
             <button
               key={i}
               onClick={() => slider.moveToSlideRelative(i)}
-              className={'dot' + (currentSlide === i ? ' active' : '')}
+              className={'focus:outline-none rounded-full w-2.5 h-2.5' + (currentSlide === i ? ' bg-base-white' : ' border-2 border-base-white')}
             />
           ))}
         </div>
