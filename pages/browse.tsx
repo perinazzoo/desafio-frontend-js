@@ -20,7 +20,21 @@ export default function Browse () {
             {
               icon: 'cobrowsing',
               title: 'Navegar',
-              url: '/browse'
+              url: '/browse',
+              subLinks: [
+                {
+                  title: 'Treinamentos',
+                  url: '/browse'
+                },
+                {
+                  title: 'Trilhas',
+                  url: '/browse'
+                },
+                {
+                  title: 'Podcasts',
+                  url: '/browse'
+                }
+              ]
             },
             {
               icon: 'squares',

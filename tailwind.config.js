@@ -1,11 +1,26 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       height: {
-        66: '267px'
+        66: '267px',
+        74: '298px',
+        84: '344px'
+      },
+      width: {
+        66: '272px'
+      },
+      margin: {
+        4.5: '1.125rem/* 18px */'
       }
+    },
+    screens: {
+      xs: '500px',
+      '3xl': '1920px',
+      ...defaultTheme.screens
     },
     minWidth: {
       0: '0',
@@ -58,7 +73,8 @@ module.exports = {
     boxShadow: {
       sm: '0px 2px 11px -5px rgba(0, 0, 0, 0.25)',
       mobile: '0px 0px 10px rgba(14, 33, 61, 0.2)',
-      menu: '0px -8px 22px rgba(0, 0, 0, 0.25)'
+      menu: '0px -8px 22px rgba(0, 0, 0, 0.25)',
+      none: 'none'
     },
     fontFamily: {
       sans: ['Roboto', 'sans-serif']
@@ -67,5 +83,7 @@ module.exports = {
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/line-clamp')
+  ]
 }

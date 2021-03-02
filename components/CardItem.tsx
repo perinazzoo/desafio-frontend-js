@@ -14,22 +14,23 @@ type CardItemProps = {
     metric: string
     title: string
     category: string
-    averageTime: number
+    averageTime?: number
     percentage?: number
   }
+  className?: string
 }
 
 const fullConfig = resolveConfig(tailwindConfig)
 
-export default function CardItem ({ cardData }: CardItemProps) {
+export default function CardItem ({ cardData, className }: CardItemProps) {
   const tagClass = cardData.tag === 'confidencial' ? 'text-orange-500' : 'text-success-500'
 
   return (
-    <div className="mb-6">
+    <div className={className}>
       <Link href="/post">
-        <a className="relative w-full h-full flex flex-col">
+        <a className="relative w-full flex flex-col">
           <span
-           className={'opacity-80 rounded-br rounded-tl absolute top-0 left-0 z-10 px-4 bg-base-white uppercase text-xs tracking-wider ' + tagClass}
+           className={'xs:hidden opacity-80 rounded-br rounded-tl absolute top-0 left-0 z-10 px-4 bg-base-white uppercase text-xs tracking-wider ' + tagClass}
           >
             {cardData.tag}
           </span>
@@ -64,13 +65,17 @@ export default function CardItem ({ cardData }: CardItemProps) {
       <p className="text-sm text-grey-800 mt-4 mb-1 truncate">{cardData.title}</p>
       <div className="flex items-center text-grey-500 text-xs">
         <span>{cardData.category}</span>
-        <div className="border-l border-grey-500 mx-2 h-4"/>
-        <Icon
-          size={14}
-          color={fullConfig.theme.colors.grey[500]}
-          name="clock"
-        />
-        <span className="ml-1">+ {cardData.averageTime} min</span>
+        {cardData.averageTime && (
+          <>
+            <div className="border-l border-grey-500 mx-2 h-4"/>
+            <Icon
+              size={14}
+              color={fullConfig.theme.colors.grey[500]}
+              name="clock"
+            />
+            <span className="ml-1">+ {cardData.averageTime} min</span>
+          </>
+        )}
       </div>
     </div>
   )
