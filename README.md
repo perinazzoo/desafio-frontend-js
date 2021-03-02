@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Desafio Frontend [MOBRJ Software](https://www.mobrj.com.br)
 
-## Getting Started
+Seja bem-vindo!
 
-First, run the development server:
+Apreciamos seu interesse em participar deste processo e por encarar nosso desafio.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+# Quem somos
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Nós na MOBRJ Software somos apaixonados por desafios de software. O nosso trabalho é focado em desenvolvimento de soluções integradas. Sejam elas web, mobile ou simplesmente backend. Atualmente utilizamos as linguagens Javascript e C#, onde possuímos times específicos para cada stack.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+# Sobre o desafio
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+O seu objetivo será abrir um fork este repositório, executar o máximo de desejos listados no único **Project** criado, estimar o tempo que levará para executar cada item e registrar o tempo decorrido para que você mesmo possa avaliar seu desempenho.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+A missão será de construir com a mentalidade de **'MOBILE FIRST'**:
 
-## Learn More
+- Um website reactjs utilizando NextJS, TailwindCSS e Framer Motion
 
-To learn more about Next.js, take a look at the following resources:
+Segue o design contendo todos os artefatos de imagem e texto necessários: [Link para os designs](https://www.figma.com/file/jJ7GHmAetLDb0O0dcYEMwD/Desafio-MOBRJ?node-id=438%3A9688)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> Dica de ouro
+>
+> Vídeo com exemplo de utilização de duas das tecnologias requisitadas no desafio: [Link molezinha](https://www.youtube.com/watch?v=n_GU1yTImJg)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# O que iremos avaliar?
 
-## Deploy on Vercel
+O time de projeto Javascript irá analisar a sua entrega tentando rodar os códigos, portanto, é importante construir um passo para replicarmos o que você implementou. Além disso, será verificada a utilização de padrões de projeto e estruturas para a solução proposta.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# O prazo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+O tempo é você quem determina. Mas lembre-se que é melhor o feito do que o perfeito. Portanto, iremos começar a avaliar as entregas na **segunda-feira dia 22 à partir das 14h**.
+
+# A entrega
+
+Para submeter o teu projeto concluído, mande email para contato@mobrj.com.br
+
+Boa Sorte!
+Equipe MOBRJ
