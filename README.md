@@ -1,38 +1,25 @@
 # Desafio Frontend [MOBRJ Software](https://www.mobrj.com.br)
 
-Seja bem-vindo!
+## Para rodar o projeto localmente:
 
-Apreciamos seu interesse em participar deste processo e por encarar nosso desafio.
+1. Clone este repositório utilizando `git clone https://github.com/perinazzoo/desafio-frontend-js.git`
+2. Instale as dependências do projeto utilizando `yarn` ou `npm install`
+3. Faça um build do projeto e inicie-o utilizando `yarn build && yarn start` ou `npm run build && npm run start`
 
-# Quem somos
+## Proposta de projeto
 
-Nós na MOBRJ Software somos apaixonados por desafios de software. O nosso trabalho é focado em desenvolvimento de soluções integradas. Sejam elas web, mobile ou simplesmente backend. Atualmente utilizamos as linguagens Javascript e C#, onde possuímos times específicos para cada stack.
+- Desenvolver uma página em Nextjs + Tailwind baseada em um protótipo feito no figma
 
-# Sobre o desafio
+## Sobre o desenvolvimento
 
-O seu objetivo será abrir um fork este repositório, executar o máximo de desejos listados no único **Project** criado, estimar o tempo que levará para executar cada item e registrar o tempo decorrido para que você mesmo possa avaliar seu desempenho.
+* Tentei ao máximo componentizar partes isoladas e que pudessem ser repetidas em outras possíveis páginas
+* Optei por utilizar typescript para me ajudar na organização
+* Estruturei os componentes e a página da melhor forma que encontrei para o recebimento de dados dinâmicos, aproximando-se assim de um caso real
+* Fui o mais fiel possível ao protótipo disponibilizado
+* Utilizei ao máximo do poder do tailwind para estilizar à mão apenas o necessário
 
-A missão será de construir com a mentalidade de **'MOBILE FIRST'**:
+Este foi meu primeiro contato com Tailwind e Nextjs, por isso tentei não complicar as coisas, sei que não os explorei ao máximo e que provavelmente pequei em uma ou outra tomada de decisão. Dito isto, peço desculpas por não entregar todo o layout, faltando 2 seções, uma de busca e uma listagem. Tentei cumprir o máximo de tarefas possíveis.
 
-- Um website reactjs utilizando NextJS, TailwindCSS e Framer Motion
-
-Segue o design contendo todos os artefatos de imagem e texto necessários: [Link para os designs](https://www.figma.com/file/jJ7GHmAetLDb0O0dcYEMwD/Desafio-MOBRJ?node-id=438%3A9688)
-
-> Dica de ouro
->
-> Vídeo com exemplo de utilização de duas das tecnologias requisitadas no desafio: [Link molezinha](https://www.youtube.com/watch?v=n_GU1yTImJg)
-
-# O que iremos avaliar?
-
-O time de projeto Javascript irá analisar a sua entrega tentando rodar os códigos, portanto, é importante construir um passo para replicarmos o que você implementou. Além disso, será verificada a utilização de padrões de projeto e estruturas para a solução proposta.
-
-# O prazo
-
-O tempo é você quem determina. Mas lembre-se que é melhor o feito do que o perfeito. Portanto, iremos começar a avaliar as entregas na **segunda-feira dia 22 à partir das 14h**.
-
-# A entrega
-
-Para submeter o teu projeto concluído, mande email para contato@mobrj.com.br
-
-Boa Sorte!
-Equipe MOBRJ
+<hr/>
+<br/>
+<blockquote>Feito com :coffee: e :heart: por Gabriel Perinazzo</blockquote>
